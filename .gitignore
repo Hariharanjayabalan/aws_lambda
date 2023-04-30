@@ -1,2 +1,2 @@
-aws_env
+aws_env/*
 .DS_Store

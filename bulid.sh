@@ -1,7 +1,17 @@
-!/usr/bin
+#!/bin/bash
 
-lambda_function_name='find_lastest_file'
+lambda_function_name='find_lastest_file.zip'
 
 python3 -m pip install -r requirements.txt -t  trigger_sns/packages/
 
 ls -lrt trigger_sns/packages/
+
+cd trigger_sns
+
+zip -rq $lambda_function_name lambda_function.py
+
+cd trigger_sns/packages/
+
+zip -rq $lambda_function_name .
+
+rm -rf trigger_sns/packages

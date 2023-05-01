@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run the bulid script
-        run: sh bulid.sh
+        run: python --version
       
       - name: Moving the zip file to s3 location
         uses: aws-actions/configure-aws-credentials@v1

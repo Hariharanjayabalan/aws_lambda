@@ -14,7 +14,7 @@ cd packages/
 
 ls -lrt
 
-zip -rq ../trigger_sns/packages/$lambda_function_name .
+zip -rq /trigger_sns/packages/$lambda_function_name .
 
 rm -rf ../trigger_sns/packages/
 

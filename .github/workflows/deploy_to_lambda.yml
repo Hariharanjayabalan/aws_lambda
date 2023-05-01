@@ -12,5 +12,14 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: "3.10"
+
+    deploy_shell_script:
       - name: Run the bulid script
         run: sh bulid.sh
+      
+      - name: Moving the zip file to s3 location
+        run: echo 'Moving the zip file to s3 location'
+
+    deploy_to_lambda:
+      - name: Moving the zip to lambda
+        run: echo 'Moving the zip to lambda'

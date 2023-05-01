@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run the bulid script
-        run: python --version
+        run: sh bulid.sh
       
       - name: Moving the zip file to s3 location
         uses: aws-actions/configure-aws-credentials@v1
@@ -42,4 +42,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Moving the zip to lambda
-        run: echo 'Moving the zip to lambda'
+        run: |
+          aws lambda update-function-code \
+                --function-name  find_lastest_file \
+                --s3-bucket src-lambda-hari \
+                --s3-key find_lastest_file.zip

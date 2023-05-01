@@ -3,7 +3,7 @@ name: Deploy to Lambda
 on: push
 
 jobs:
-  bulid:
+  environment_setup:
     runs-on: ubuntu-latest
 
     steps:
@@ -13,13 +13,13 @@ jobs:
         with:
           python-version: "3.10"
 
-    deploy_shell_script:
+  deploy_shell_script:
       - name: Run the bulid script
         run: sh bulid.sh
       
       - name: Moving the zip file to s3 location
         run: echo 'Moving the zip file to s3 location'
 
-    deploy_to_lambda:
+  deploy_to_lambda:
       - name: Moving the zip to lambda
         run: echo 'Moving the zip to lambda'

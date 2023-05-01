@@ -33,15 +33,6 @@ jobs:
         run: |
           ls 
           aws s3 cp trigger_sns/find_lastest_file.zip s3://src-lambda-hari/src_code/
-
-
-  deploy_to_lambda:
-    runs-on: ubuntu-latest
-    needs: [environment_setup,deploy_shell_script]
-
-    steps:
-      - uses: actions/checkout@v3
       - name: Moving the zip to lambda
         run: |
           aws lambda update-function-code --function-name find_lastest_file --s3-bucket src-lambda-hari --s3-key src_code/find_lastest_file.zip
-    

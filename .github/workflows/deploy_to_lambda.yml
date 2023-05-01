@@ -1,0 +1,16 @@
+name: Deploy to Lambda
+
+on: push
+
+jobs:
+  bulid:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup python version
+        uses: action/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: Run the bulid script
+        run: sh bulid.sh

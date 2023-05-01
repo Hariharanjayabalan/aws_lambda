@@ -23,7 +23,17 @@ jobs:
         run: sh bulid.sh
       
       - name: Moving the zip file to s3 location
-        run: echo 'Moving the zip file to s3 location'
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Copy to zip to AWS s3
+        run: |
+          ls 
+          aws s3 cp trigger_sns/find_lastest_file.zip s3://src-lambda-hari/
+
 
   deploy_to_lambda:
     runs-on: ubuntu-latest

@@ -15,7 +15,9 @@ jobs:
 
   deploy_shell_script:
     runs-on: ubuntu-latest
-    needs: environment_setup
+    needs: [environment_setup]
+    
+    setps:
       - name: Run the bulid script
         run: sh bulid.sh
       
@@ -24,6 +26,8 @@ jobs:
 
   deploy_to_lambda:
     runs-on: ubuntu-latest
-    needs: environment_setup,deploy_shell_script
+    needs: [environment_setup,deploy_shell_script]
+    
+    setps:
       - name: Moving the zip to lambda
         run: echo 'Moving the zip to lambda'

@@ -44,6 +44,6 @@ jobs:
       - name: Moving the zip to lambda
         run: |
           aws lambda update-function-code \
-                --function-name  find_lastest_file \
+                --function-name find_lastest_file \
                 --s3-bucket src-lambda-hari \
                 --s3-key find_lastest_file.zip

@@ -14,7 +14,7 @@ zip -rq $lambda_function_name lambda_function.py
 
 cd packages/
 
-zip -rq /home/runner/work/aws_lambda/aws_lambda/$lambda_function_name .
+zip -rq /home/runner/work/aws_lambda/aws_lambda/trigger_sns/$lambda_function_name .
 
 rm -rf ../trigger_sns/packages/
 

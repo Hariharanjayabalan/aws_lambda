@@ -12,6 +12,10 @@ cd trigger_sns/
 
 zip -rq $lambda_function_name lambda_function.py
 
+pwd
+
+ls -lrt
+
 cd packages/
 
 
@@ -19,10 +23,12 @@ ls -lrt
 
 pwd
 
-zip -rq /trigger_sns/packages/$lambda_function_name .
+zip -rq /home/runner/work/aws_lambda/aws_lambda/$lambda_function_name .
 
 rm -rf ../trigger_sns/packages/
 
 cd .. 
+
+pwd
 
 ls -lrt

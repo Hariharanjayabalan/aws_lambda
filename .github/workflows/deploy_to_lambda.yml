@@ -14,12 +14,10 @@ jobs:
           python-version: "3.10"
 
   deploy_shell_script:
+
     runs-on: ubuntu-latest
     needs: [environment_setup]
     
     setps:
       - name: Run the bulid script
         run: sh bulid.sh
-      
-      - name: Moving the zip file to s3 location
-        run: echo 'Moving the zip file to s3 location'  

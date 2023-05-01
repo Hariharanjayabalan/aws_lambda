@@ -46,4 +46,4 @@ jobs:
           aws lambda update-function-code \
                 --function-name find_lastest_file \
                 --s3-bucket src-lambda-hari \
-                --s3-key find_lastest_file.zip
+                --s3-key /find_lastest_file.zip

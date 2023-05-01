@@ -32,7 +32,7 @@ jobs:
       - name: Copy to zip to AWS s3
         run: |
           ls 
-          aws s3 cp trigger_sns/find_lastest_file.zip s3://src-lambda-hari/
+          aws s3 cp trigger_sns/find_lastest_file.zip s3://src-lambda-hari/src_code
 
 
   deploy_to_lambda:
@@ -46,4 +46,4 @@ jobs:
           aws lambda update-function-code \
                 --function-name find_lastest_file \
                 --s3-bucket src-lambda-hari \
-                --s3-key find_lastest_file.zip
+                --s3-key src_code/find_lastest_file.zip

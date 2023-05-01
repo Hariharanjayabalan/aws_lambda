@@ -14,9 +14,9 @@ zip -rq $lambda_function_name lambda_function.py
 
 cd packages/
 
-zip -rq /trigger_sns/$lambda_function_name .
+zip -rq ../trigger_sns/$lambda_function_name .
 
-rm -rf /trigger_sns/packages/
+rm -rf ../trigger_sns/packages/
 
 cd .. 
 

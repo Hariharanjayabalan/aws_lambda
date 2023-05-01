@@ -32,6 +32,6 @@ def lambda_handler(event, context):
     
     sns_client = boto3.client('sns')
     
-    sns_client.publish(TopicArn='arn:aws:sns:us-east-1:801355498549:s3_event_notification',Message=json.dumps(output[0]))
+    sns_client.publish(TopicArn='arn:aws:sns:us-east-1:767876180505:S3_send_notification',Message=json.dumps(output[0]))
 
     return {"statusCode": 200, "body": json.dumps(output[0])}
